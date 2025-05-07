@@ -1,47 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+    />
 
     <title>Frontend Mentor | QR code component</title>
 
-    <base target="_blank">
+    <base target="_blank" />
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
-      .attribution, footer>address>p {
-        font-size: 11px;
-        text-align: center;
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+      /*.attribution, footer>address>p {
+              font-size: 11px;
+              text-align: center;
+            }
+            .attribution a,  footer>address>p>a{
+              color: hsl(228, 45%, 44%);
+            }*/
+
+      :root {
+        --white: hsl(0, 0%, 100%);
+        --slate-300: hsl(212, 45%, 89%);
+        --slate-500: hsl(216, 15%, 48%);
+        --slate-900: hsl(218, 44%, 22%);
+
+        --space-200: 16px;
+        --space-300: 24px;
+        --space-500: 40px;
+
+        --radius-lg: 20px;
+        --radius-sm: 10px;
+
+        --family-sans: "Outfit", sans-serif;
+
+        --text-preset-1: 22px;
+        --text-preset-2: 15px;
+        --line-preset-1: 1.2;
+        --line-preset-2: 1.4;
+        --letter-preset-1: 0;
+        --letter-preset-2: 0.2;
+
+        --flow-space: 1.25rem;
+        --max-width: 320px;
       }
-      .attribution a,  footer>address>p>a{
-        color: hsl(228, 45%, 44%);
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--family-sans), serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size: var(--text-preset-2);
+        line-height: var(--line-preset-2);
+        letter-spacing: var(--letter-preset-2);
+        color: var(--slate-500);
+        background-color: var(--slate-300);
+      }
+
+      h2 {
+        font-size: var(--text-preset-1);
+        line-height: var(--line-preset-1);
+        letter-spacing: var(--letter-preset-1);
+        color: var(--slate-900);
+      }
+
+      img,
+      picture {
+        max-width: 100%;
+        display: block;
+      }
+
+      .flow > * + * {
+        margin-block-start: var(--flow-space, 1em);
+      }
+
+      .challenge-wrapper {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+        padding: 1.5rem;
+      }
+
+      .card {
+        max-width: 320px;
+        background-color: var(--white);
+        padding: var(--space-300);
+        border-radius: var(--radius-lg);
+        box-shadow: 0 25px 25px hsl(0 0% 0% / 0.1);
+      }
+
+      .card__image {
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        aspect-ratio: 1 / 1;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .card__content {
+        padding-inline: var(--space-200);
+        text-align: center;
+
+        > *{
+          --flow-space: var(--space-200);
+        }
       }
     </style>
   </head>
 
   <body>
-
-    <main>
-
-      <div class="card_container">
+  <main class="challenge-wrapper">
+    <article class="card flow">
+      <picture class="card__image">
+        <img
+                src="/images/image-qr-code.png"
+                alt="An image of a QR code."
+                loading="lazy"
+        />
+      </picture>
+      <div class="card__content flow">
         <h2>Improve your front-end skills by building projects</h2>
-        <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+        <p>
+          Scan the QR code to visit Frontend Mentor and take your coding
+          skills to the next level
+        </p>
       </div>
+    </article>
+  </main>
 
-    </main>
+  <!--<main>
 
-    <footer>
+    <div class="card_container">
+      <h2>Improve your front-end skills by building projects</h2>
+      <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+    </div>
 
-      <address>
-        <p class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
-        <p>Coded by <a href="https://www.linkedin.com/in/paul-tunda-521409334/">Paul Tunda</a>.</p>
-      </address>
+  </main>-->
 
-    </footer>
+  <!--<footer>
 
+    <address>
+      <p class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
+      <p>Coded by <a href="#">Your Name Here</a>.</p>
+    </address>
+
+  </footer>-->
   </body>
-
 </html>
